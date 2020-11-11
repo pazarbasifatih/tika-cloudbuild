@@ -7,7 +7,7 @@ MAINTAINER david@logicalspark.com
 FROM base as dependencies
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install openjdk-14-jre-headless gdal-bin tesseract-ocr \
-        tesseract-ocr-all_4.1.1-2build3_all.deb curl
+        tesseract-ocr-all curl
 
 RUN echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y xfonts-utils fonts-freefont-ttf fonts-liberation ttf-mscorefonts-installer wget cabextract
